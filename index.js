@@ -1,15 +1,17 @@
 document.addEventListener("keydown",function (event) {
     makeSound(event.key);
     console.log(event.key);
+    btnAnimation(event.key);
 });
 
 for(var i=0;i<=7;i++){
     document.querySelectorAll("button")[i].addEventListener("click",function () {
         
-       
+        this.style.color="white";
         var buttonHTML=this.innerHTML;
         console.log(buttonHTML);
         makeSound(buttonHTML);
+        btnAnimation(buttonHTML);
         });
 
     }
@@ -57,3 +59,10 @@ for(var i=0;i<=7;i++){
     
             }
         }
+function btnAnimation(currentKey){
+    document.querySelector("."+currentKey).classList.add("pressed");
+    setTimeout(function (){
+        document.querySelector("."+currentKey).classList.remove("pressed");
+    },100);
+
+}
