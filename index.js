@@ -6,7 +6,7 @@ document.addEventListener("keydown",function (event) {
 for(var i=0;i<=7;i++){
     document.querySelectorAll("button")[i].addEventListener("click",function () {
         
-        this.style.color="white";
+       
         var buttonHTML=this.innerHTML;
         console.log(buttonHTML);
         makeSound(buttonHTML);
